@@ -8,20 +8,24 @@ function App() {
 
  useEffect(() => {
   const moveCircle = (e) => {
+    const scrollX = window.scrollX || window.pageXOffset;
+    const scrollY = window.scrollY || window.pageYOffset;
+
     gsap.to('#circle', {
-      x: e.x,
-      y: e.y,
-      duration: 0.8,
-      ease: 'power2.out'
+      x: e.clientX + scrollX,
+      y: e.clientY + scrollY,
+      duration: 0.4,
+      ease: 'power2.out',
     });
   };
-  
+
   window.addEventListener('mousemove', moveCircle);
-  
+
   return () => {
     window.removeEventListener('mousemove', moveCircle);
   };
 }, []);
+
   return (
 
     <>
