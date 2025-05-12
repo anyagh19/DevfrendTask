@@ -7,23 +7,7 @@ import { motion } from 'framer-motion';
 import { MdOutlineCancel } from "react-icons/md";
 
 const Header = () => {
-    const [theme, setTheme] = useState('dark');
     const [isOpen, setIsOpen] = useState(false);
-
-    // Load theme from local storage on mount
-    useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        setTheme(savedTheme);
-        document.documentElement.classList.toggle('dark', savedTheme === 'dark');
-    }, []);
-
-    // Toggle theme
-    const toggleTheme = () => {
-        const newTheme = theme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-        document.documentElement.classList.toggle('dark', newTheme === 'dark');
-    };
 
     return (
         <header className='w-full bg-gray-900 flex justify-between items-center px-7 py-6 relative dark:bg-white'>
@@ -40,7 +24,7 @@ const Header = () => {
                 {isOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
             </div>
             <div className='hidden md:flex gap-8 items-center text-white text-[17px] font-medium dark:text-gray-900'>
-                <MdDarkMode onClick={toggleTheme} className='items-center text-xl cursor-pointer' />
+                <MdDarkMode  className='items-center text-xl cursor-pointer' />
                 <h3 className='flex items-center gap-2 cursor-pointer'><Phone className='text-blue-400' /> +19406129127</h3>
                 <Link to='/contact'>
                 <button className='py-2 px-3 hover:scale-105 bg-blue-400 hover:bg-blue-500 rounded-lg font-medium text-[15px] text-black dark:bg-blue-600 dark:text-white'>Book an Appointment</button>
@@ -63,7 +47,7 @@ const Header = () => {
                         <h3 className='flex items-center gap-2 cursor-pointer'><Phone className='text-blue-400 dark:text-blue-600' /> +19408081569</h3>
                     </div>
                     <div className='bg-gray-800 py-2 px-3 rounded-lg mt-8 flex gap-6 hover:scale-105 dark:bg-gray-200 dark:text-gray-800'>
-                        <h3 className='flex justify-between w-full'>Preferences <MdDarkMode onClick={toggleTheme} className='items-center text-xl cursor-pointer' /></h3>
+                        <h3 className='flex justify-between w-full'>Preferences <MdDarkMode  className='items-center text-xl cursor-pointer' /></h3>
                     </div>
                     <Link to='/contact'>
                         <button className='py-2 px-3 mt-8 bg-blue-400 hover:bg-blue-500 rounded-lg font-medium text-[15px] text-black dark:bg-blue-600 dark:text-white'>Book an Appointment</button>
