@@ -42,6 +42,7 @@ const Header = () => {
                         <Link to='/services'><li className='font-medium cursor-pointer text-lg hover:text-blue-400 dark:hover:text-blue-600'>Services</li></Link>
                         <Link to='/gallery'><li className='font-medium cursor-pointer text-lg hover:text-blue-400 dark:hover:text-blue-600'>Gallery</li></Link>
                         <Link to='/contact'><li className='font-medium cursor-pointer text-lg hover:text-blue-400 dark:hover:text-blue-600'>Contact</li></Link>
+                        <Link to='/location'><li className='font-medium cursor-pointer text-lg hover:text-blue-400 dark:hover:text-blue-600'>Location</li></Link>
                     </ul>
                     <div className='bg-gray-800 py-2 px-3 rounded-lg mt-8 hover:scale-105 dark:bg-gray-200 dark:text-gray-800'>
                         <h3 className='flex items-center gap-2 cursor-pointer'><Phone className='text-blue-400 dark:text-blue-600' /> +19408081569</h3>
