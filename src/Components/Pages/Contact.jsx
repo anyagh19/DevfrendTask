@@ -6,24 +6,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Contact = () => {
-    const [theme, setTheme] = useState('dark');
-    const [isOpen, setIsOpen] = useState(false);
-
-    // Load theme from local storage on mount
-    useEffect(() => {
-        const savedTheme = localStorage.getItem('theme') || 'dark';
-        setTheme(savedTheme);
-        document.documentElement.classList.toggle('dark', savedTheme === 'dark');
-    }, []);
-
-    // Toggle theme
-    const toggleTheme = () => {
-        const newTheme = theme === 'dark' ? 'light' : 'dark';
-        setTheme(newTheme);
-        localStorage.setItem('theme', newTheme);
-        document.documentElement.classList.toggle('dark', newTheme === 'dark');
-    };
-
+   
     return (
         <div className='bg-gray-900 dark:bg-white py-10'>
             <div className='text-center'>
@@ -37,8 +20,8 @@ const Contact = () => {
                     Take a look at our shop atmosphere and the quality cuts we deliver to our clients.
                 </p>
             </div>
-            <section className='max-w-full mx-auto py-10 px-6 flex gap-5'>
-                <div className='w-[60%] bg-gray-800 dark:bg-gray-100 rounded-2xl p-8 text-white dark:text-gray-900 hover:border-2 hover:border-blue-400'>
+            <section className='max-w-full mx-auto py-10 px-6 flex flex-col md:flex-row gap-5'>
+                <div className=' w-full md:w-[60%] bg-gray-800 dark:bg-gray-100 rounded-2xl p-8 text-white dark:text-gray-900 hover:border-2 hover:border-blue-400'>
                     <div className='hover:translate-x-1 duration-300 hover:bg-gray-700 p-4 rounded-lg'>
                         <h3 className='text-2xl font-semibold mb-3'>Address</h3>
                         <p className='mb-4 flex items-center gap-3'><MapPin className='text-blue-400 ' /> 500 N Bell Ave #109, Denton, TX 76209, United States</p>
@@ -52,7 +35,7 @@ const Contact = () => {
                         <p className='flex items-center gap-3'><Clock className='text-blue-400' /> Closes 7pm , Sun: Closed</p>
                     </div>
                 </div>
-                <div className='w-[120%] bg-gray-800 dark:bg-gray-100 rounded-2xl p-8 text-white dark:text-gray-900 hover:border-2 hover:border-blue-400'>
+                <div className='w-full md:w-[120%] bg-gray-800 dark:bg-gray-100 rounded-2xl p-8 text-white dark:text-gray-900 hover:border-2 hover:border-blue-400'>
                     <form>
                         <div className='group hover:-translate-y-1 duration-300'>
                             <label className='block mb-4 group-hover:text-blue-400'>Your Name
